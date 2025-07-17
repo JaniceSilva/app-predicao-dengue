@@ -5,6 +5,20 @@ import joblib
 import tensorflow as tf
 from datetime import datetime
 
+import subprocess
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/atualizar")
+def atualizar_dados():
+    try:
+        subprocess.run(["python3", "job_diario.py"], check=True)
+        return {"status": "Atualização executada com sucesso"}
+    except subprocess.CalledProcessError as e:
+        return {"status": "Erro na atualização", "detalhes": str(e)}
+
+
 st.set_page_config(page_title="Predição de Arboviroses", layout="wide")
 st.title("🦟 Predição de Casos de Dengue por Município")
 

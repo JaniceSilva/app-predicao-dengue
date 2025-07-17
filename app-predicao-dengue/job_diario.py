@@ -2,6 +2,8 @@ from supabase_config import supabase
 import requests
 import pandas as pd
 
+
+
 CHAVE_API = {"X-UID-Key": "JaniceSilva:2794c643-6e30-47a1-9f06-cf844c617983"}
 
 def atualizar_dados(municipio="rio-de-janeiro"):
