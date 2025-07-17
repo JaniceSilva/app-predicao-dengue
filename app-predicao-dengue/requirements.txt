@@ -1,0 +1,7 @@
+streamlit
+pandas
+numpy
+tensorflow
+requests
+python-dotenv
+supabase
